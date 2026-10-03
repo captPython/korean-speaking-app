@@ -18,4 +18,5 @@ npm install
 npm run dev     # local dev server
 npm run build   # typecheck + production build
 npm run lint
+npm test        # unit tests (Hangul scoring)
 ```
