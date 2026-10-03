@@ -1,11 +1,15 @@
 :root {
   --text: #1f2933;
   --muted: #616e7c;
-  --bg: #ffffff;
+  --bg: #f7f8fa;
+  --surface: #ffffff;
   --border: #e4e7eb;
   --accent: #2563eb;
-  --ok: #15803d;
-  --warn: #b45309;
+  --accent-text: #ffffff;
+  --miss: #dc2626;
+  --miss-bg: rgba(220, 38, 38, 0.12);
+  --notice-bg: #fef3c7;
+  --notice-text: #78350f;
 
   font: 16px/1.5 system-ui, 'Segoe UI', Roboto, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
   color-scheme: light dark;
@@ -17,11 +21,14 @@
   :root {
     --text: #f3f4f6;
     --muted: #9ca3af;
-    --bg: #16171d;
+    --bg: #111217;
+    --surface: #1b1d24;
     --border: #2e303a;
-    --accent: #60a5fa;
-    --ok: #4ade80;
-    --warn: #fbbf24;
+    --accent: #3b82f6;
+    --miss: #f87171;
+    --miss-bg: rgba(248, 113, 113, 0.15);
+    --notice-bg: #3b2f12;
+    --notice-text: #fde68a;
   }
 }
 
@@ -31,13 +38,21 @@ body {
 }
 
 #root {
-  max-width: 640px;
+  max-width: 560px;
   margin: 0 auto;
-  padding: 32px 16px;
+  padding: 24px 16px 48px;
 }
 
 h1 {
-  font-size: 1.75rem;
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+.header {
+  margin-bottom: 16px;
+}
+
+p {
   margin: 0 0 8px;
 }
 
@@ -45,28 +60,91 @@ h1 {
   color: var(--muted);
 }
 
-.checks {
-  list-style: none;
-  padding: 0;
+.small {
+  font-size: 0.85rem;
+  margin-top: 16px;
+}
+
+.notice {
+  background: var(--notice-bg);
+  color: var(--notice-text);
+  padding: 10px 14px;
+  border-radius: 10px;
+}
+
+.card {
+  background: var(--surface);
   border: 1px solid var(--border);
-  border-radius: 12px;
+  border-radius: 16px;
+  padding: 24px 20px;
+  text-align: center;
+  margin-bottom: 16px;
 }
 
-.checks li {
+.korean {
+  font-size: 2.25rem;
+  font-weight: 600;
+  line-height: 1.3;
+  word-break: keep-all;
+}
+
+.missed {
+  color: var(--miss);
+  background: var(--miss-bg);
+  border-radius: 4px;
+}
+
+.romanization {
+  font-style: italic;
+}
+
+.row {
   display: flex;
-  justify-content: space-between;
-  padding: 12px 16px;
-  border-top: 1px solid var(--border);
+  gap: 8px;
+  justify-content: center;
+  margin: 16px 0;
 }
 
-.checks li:first-child {
-  border-top: none;
+button {
+  font: inherit;
+  padding: 10px 16px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  cursor: pointer;
+  min-height: 44px;
 }
 
-.ok {
-  color: var(--ok);
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
 }
 
-.warn {
-  color: var(--warn);
+.mic {
+  width: 100%;
+  background: var(--accent);
+  color: var(--accent-text);
+  border-color: var(--accent);
+  font-weight: 600;
+}
+
+.mic[aria-pressed='true'] {
+  background: var(--miss);
+  border-color: var(--miss);
+}
+
+.error {
+  color: var(--miss);
+  margin-top: 12px;
+}
+
+.result {
+  margin-top: 16px;
+}
+
+.score {
+  font-size: 3rem;
+  font-weight: 700;
+  margin: 0;
 }
