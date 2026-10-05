@@ -148,3 +148,136 @@ button:disabled {
   font-weight: 700;
   margin: 0;
 }
+
+.tabs {
+  display: flex;
+  gap: 4px;
+  margin-top: 12px;
+  padding: 4px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+
+.tabs button {
+  flex: 1;
+  border: none;
+  min-height: 40px;
+}
+
+.tabs button[aria-selected='true'] {
+  background: var(--accent);
+  color: var(--accent-text);
+  font-weight: 600;
+}
+
+.mode {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+  font-size: 0.9rem;
+}
+
+button.link {
+  border: none;
+  background: none;
+  color: var(--accent);
+  padding: 8px 0;
+  min-height: 0;
+  font-weight: 600;
+}
+
+.hints {
+  list-style: none;
+  padding: 0;
+  margin: 12px 0 0;
+  text-align: left;
+}
+
+.hints li {
+  padding: 10px 12px;
+  border-left: 3px solid var(--miss);
+  background: var(--miss-bg);
+  border-radius: 6px;
+  margin-bottom: 8px;
+}
+
+.tip {
+  display: block;
+  color: var(--muted);
+  font-size: 0.9rem;
+  margin-top: 4px;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.stats div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 12px 4px;
+}
+
+.stats strong {
+  font-size: 1.75rem;
+  line-height: 1.2;
+}
+
+.progress-list {
+  list-style: none;
+  padding: 0;
+  margin: 16px 0 0;
+}
+
+.progress-item {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 4px 12px;
+  text-align: left;
+  margin-bottom: 8px;
+}
+
+.progress-text {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.small-inline {
+  font-size: 0.85rem;
+}
+
+.progress-score {
+  align-self: center;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+.bar {
+  grid-column: 1 / -1;
+  height: 6px;
+  background: var(--border);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.bar-fill {
+  display: block;
+  height: 100%;
+  background: var(--accent);
+}
+
+.bar-fill.done {
+  background: #16a34a;
+}
